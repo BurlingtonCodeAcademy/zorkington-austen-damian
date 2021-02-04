@@ -14,9 +14,9 @@ function ask(questionText) {
 start();
 
 async function start() {
-  const welcomeMessage = ` You awake with a sharp pain in the back of your head. Still slightly inebriated from the New Years party last night. You look around to find yourself in a dungeon that is not your own. You walk up to a door to see a piece of paper labeled CONTACT TRACING, please fill out your name to continue `;
+  const welcomeMessage = `You awake with a sharp pain in the front of your head. Still slightly inebriated from the New Years party last night. \nYou look around to find yourself in a dungeon that is not your own. \nIn the middle of the room you see a piece of paper and pen labeled CONTACT TRACING, please fill out your name to continue: `;
   let answer = await ask(welcomeMessage);
-  console.log( "Excellent we will contact you if needed!" );
+  console.log( `You write ${answer} at the bottom of the page, barely legible. ` + "\nLooks like 2020 isn't over yet, YOU MUST ESCAPE! You look around and see a single door in the room labelled SOUTH, how convenient. \nPlease write out your actions in the [ACTIONS] [DIRECTIONS] format. Type help for a word list. " );
 
   // console.log("Now write your code to make this work!"");
   // process.exit();
@@ -68,4 +68,3 @@ console.log( `Inventory ${inventory}`)
   }
 }
 
-// Looks like 2020 isn't over yet, YOU MUST ESCAPE! You see a single door labeled SOUTH out of the corner of your eye, how convenient. 
