@@ -13,7 +13,6 @@ class Rooms{
     }
 }
 
-
 // let rooms = {
 //   "start": {
 //       "description": "This is the room you woke up in! it is dark and smells like mildew. To advance you must go south" ,

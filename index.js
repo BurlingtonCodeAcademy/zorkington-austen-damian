@@ -23,6 +23,7 @@ async function start() {
   // console.log("Now write your code to make this work!"");
   // process.exit();
 }
+
 let currentRoom = "start";
 let commands = [
   " pick up",
