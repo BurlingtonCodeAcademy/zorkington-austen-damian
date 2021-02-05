@@ -14,13 +14,14 @@ function ask(questionText) {
 start();
 
 async function start() {
+  
   const welcomeMessage = `You awake with a sharp pain in the front of your head. Still slightly inebriated from the New Years party last night. \nYou look around to find yourself in a dungeon that is not your own. \nIn the middle of the room you see a piece of paper and pen labeled CONTACT TRACING, please fill out your name to continue: `;
-  let answer = await ask(welcomeMessage);
-  command = await ask( `You write ${answer} at the bottom of the page, barely legible. ` + "\nLooks like 2020 isn't over yet, YOU MUST ESCAPE! , how convenient. \nPlease write out your actions in the [ACTIONS] [DIRECTIONS] format. Type help for a word list. " );
-  if(command === "help" || command === '/help' || command === "h"){
+  let name = await ask(welcomeMessage);
+  answer = await ask( `You write ${name} at the bottom of the page, barely legible. ` + "\nLooks like 2020 isn't over yet, YOU MUST ESCAPE! , how convenient. \nPlease write out your actions in the [ACTIONS] [DIRECTIONS] format. Type help for a word list. " );
+  if(answer === "help" || answer === '/help' || answer === "h"){
     console.log(`Here are your commands: ${commands}`)
     }
-    beginReply = await ask(`${answer}, are you ready to begin your escape? `)
+    beginReply = await ask(`${name}, are you ready to begin your escape? `)
     if( beginReply ===  "yes"|| beginReply === "y"){
     console.log( " You look around and see a single door in the room labelled SOUTH")
     } else if(beginReply !== ["no" , "n"]) {
@@ -28,10 +29,29 @@ async function start() {
     process.exit()
     } else 
   console.log("That's not an answer!")
+  
+  class Rooms{
+    constructor(room, direction, description){
+        this.room = room;
+        this.direction = direction;
+        this.description = description;
+    }
   }
+  dir = await ask("What direction do you go?")
+  if(dir === "south" || dir === "s" || dir === "go south"){
+    changeTo(nextRoom)
+      if(this.direction.includes(nextRoom)){
+          this.room = nextRoom
+          console.log(this.description)
+      }  else {
+          console.log(`BONK!! You hit a wall`);
+  }
+}
+
+  
   // console.log("Now write your code to make this work!"");
   // process.exit();
-
+}
 
 
 let currentRoom = "start";
