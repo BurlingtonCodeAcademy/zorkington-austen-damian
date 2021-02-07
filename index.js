@@ -29,8 +29,9 @@ async function start() {
     process.exit()
     } else 
   console.log("That's not an answer!")
+  let rooms = new
   
-  class rooms{
+  class Rooms{
     constructor(room, direction, description){
         this.room = room;
         this.direction = direction;
@@ -38,19 +39,16 @@ async function start() {
     }
   }
   dir = await ask("What direction do you go?")
-  if(dir === "south" || dir === "s" || dir === "go south"){
-    changeTo(nextRoom)
-      if(this.direction.includes(nextRoom)){
+  // if(dir === "south" || dir === "s" || dir === "go south"){
+    function changeTo(nextRoom)
+      if(directions[rooms].includes(nextRoom)){
           this.room = nextRoom
           console.log(this.description)
       }  else {
           console.log(`BONK!! You hit a wall`);
   }
-}
 
-  
-  // console.log("Now write your code to make this work!"");
-  // process.exit();
+
 }
 
 
@@ -74,7 +72,7 @@ let commands = [
   "west"
 ];
   
-rooms = {
+destinations = {
   //starting room
   "start": {
       "description": "This is the room you woke up in! it is dark and smells like mildew. To advance you must go south" ,
